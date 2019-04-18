@@ -65,32 +65,33 @@
                         </a>
                     </li>
                     <li>
-                        <a href="/Products/Add">
+                        <a href="/Categories/Add">
                             <i class="fa fa-plus-square" aria-hidden="true"></i>
-                            <span class="hide-navbar">Product Catalog</span>
+                            <span class="hide-navbar">Category</span>
                         </a>
                     </li>
-
+                    <li>
+                        <a href="/Products/Add">
+                            <i class="fa fa-plus-square" aria-hidden="true"></i>
+                            <span class="hide-navbar" id="Product-add">Product Catalog</span>
+                        </a>
+                    </li>
+                    
                     <li class="dropdown">
                         <a href="#">
                             <i class=" fa fa-desktop" aria-hidden="true">
                             </i>
-                            <span class="hide-navbar">Dashboard</span>
+                            <span class="hide-navbar">Registration</span>
                             <span class="dropdown-arrow"><i class="fa fa-angle-right"></i></span>
                         </a>
                         <ul class="dropdown-content" id="drpdownC">
                             <li>
-                                <a href="#">Server</a>
+                                <a href="/Suppliers/Save">Supplier</a>
                             </li>
                             <li>
-                                <a href="#">Project</a>
+                                <a href="/Customers/Save">Customer</a>
                             </li>
-                            <li>
-                                <a href="#">Analytics</a>
-                            </li>
-                            <li>
-                                <a href="#">Shop</a>
-                            </li>
+                            
                         </ul>
                     </li>
 
@@ -178,6 +179,27 @@
 <script src="~/Scripts/jquery-3.3.1.min.js"></script>
 <script src="~/Scripts/bootstrap.min.js"></script>
 <script src="~/Scripts/script.js"></script>
- 
+    <script type="text/javascript">
+
+        var subdirectory = "../../";
+
+        $(document).ready(function () {
+            var url = subdirectory + "Products/GetAllCategory";
+
+            $.post(url, function (rData) {
+                if (rData != undefined) {
+                    $("#CategoryId").empty();
+                    $("#CategoryId").append("<option value=''>---Select---</option>");
+                    $.each(rData, function (k, v) {
+                        var option = "<option value=" + v.Id + ">" + v.Name + "</option>";
+                        $("#CategoryId").append(option);
+
+                    });
+                }
+            });
+
+
+        });
+    </script>
 </body>
 </html>

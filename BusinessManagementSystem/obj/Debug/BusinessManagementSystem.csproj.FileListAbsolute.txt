@@ -16,3 +16,29 @@ G:\vs project\Project work\Business Management System\BusinessManagementSystem\B
 G:\vs project\Project work\Business Management System\BusinessManagementSystem\BusinessManagementSystem\obj\Debug\BusinessManagementSystem.csprojResolveAssemblyReference.cache
 G:\vs project\Project work\Business Management System\BusinessManagementSystem\BusinessManagementSystem\obj\Debug\BusinessManagementSystem.dll
 G:\vs project\Project work\Business Management System\BusinessManagementSystem\BusinessManagementSystem\obj\Debug\BusinessManagementSystem.pdb
+G:\vs project\Project work\Business Management System\BusinessManagementSystem\BusinessManagementSystem\bin\EntityFramework.dll
+G:\vs project\Project work\Business Management System\BusinessManagementSystem\BusinessManagementSystem\bin\EntityFramework.SqlServer.dll
+G:\vs project\Project work\Business Management System\BusinessManagementSystem\BusinessManagementSystem\bin\EntityFramework.xml
+G:\vs project\Project work\Business Management System\BusinessManagementSystem\BusinessManagementSystem\bin\EntityFramework.SqlServer.xml
+G:\Business Management System\BusinessManagementSystem\BusinessManagementSystem\bin\BusinessManagementSystem.dll.config
+G:\Business Management System\BusinessManagementSystem\BusinessManagementSystem\bin\BusinessManagementSystem.dll
+G:\Business Management System\BusinessManagementSystem\BusinessManagementSystem\bin\BusinessManagementSystem.pdb
+G:\Business Management System\BusinessManagementSystem\BusinessManagementSystem\bin\EntityFramework.dll
+G:\Business Management System\BusinessManagementSystem\BusinessManagementSystem\bin\EntityFramework.SqlServer.dll
+G:\Business Management System\BusinessManagementSystem\BusinessManagementSystem\bin\System.Web.Helpers.dll
+G:\Business Management System\BusinessManagementSystem\BusinessManagementSystem\bin\System.Web.Mvc.dll
+G:\Business Management System\BusinessManagementSystem\BusinessManagementSystem\bin\System.Web.Razor.dll
+G:\Business Management System\BusinessManagementSystem\BusinessManagementSystem\bin\System.Web.Webpages.Deployment.dll
+G:\Business Management System\BusinessManagementSystem\BusinessManagementSystem\bin\System.Web.Webpages.dll
+G:\Business Management System\BusinessManagementSystem\BusinessManagementSystem\bin\System.Web.Webpages.Razor.dll
+G:\Business Management System\BusinessManagementSystem\BusinessManagementSystem\bin\EntityFramework.xml
+G:\Business Management System\BusinessManagementSystem\BusinessManagementSystem\bin\EntityFramework.SqlServer.xml
+G:\Business Management System\BusinessManagementSystem\BusinessManagementSystem\bin\System.Web.Razor.xml
+G:\Business Management System\BusinessManagementSystem\BusinessManagementSystem\bin\System.Web.Webpages.xml
+G:\Business Management System\BusinessManagementSystem\BusinessManagementSystem\bin\System.Web.Webpages.Deployment.xml
+G:\Business Management System\BusinessManagementSystem\BusinessManagementSystem\bin\System.Web.Webpages.Razor.xml
+G:\Business Management System\BusinessManagementSystem\BusinessManagementSystem\bin\System.Web.Helpers.xml
+G:\Business Management System\BusinessManagementSystem\BusinessManagementSystem\bin\System.Web.Mvc.xml
+G:\Business Management System\BusinessManagementSystem\BusinessManagementSystem\obj\Debug\BusinessManagementSystem.csprojResolveAssemblyReference.cache
+G:\Business Management System\BusinessManagementSystem\BusinessManagementSystem\obj\Debug\BusinessManagementSystem.dll
+G:\Business Management System\BusinessManagementSystem\BusinessManagementSystem\obj\Debug\BusinessManagementSystem.pdb

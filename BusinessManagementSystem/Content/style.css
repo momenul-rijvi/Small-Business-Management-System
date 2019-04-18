@@ -8,6 +8,7 @@ nav{
 	background-image: linear-gradient(to left, #009994, #262c42);
     position: fixed;
     width: 100%;
+    z-index: 9999;
 }
 nav>ul.navbar{
 	list-style: none;
@@ -103,6 +104,7 @@ nav>ul.navbar ul.dropdownNav>li>a{
     font-family: 'Work Sans', sans-serif; 
     position: fixed;
     margin-top: 60px;
+    z-index: 99;
 }
 
 .main-container>.lelt-scroll{
@@ -190,8 +192,12 @@ nav>ul.navbar ul.dropdownNav>li>a{
 .activeMiniSideNav  aside.nav-sidebar>ul>li>a>span{
     display: none !important;
 }
-
 .content-box>div {
     padding: 10px;
 }
- 
+/*=========Product=========*/
+ .pch-img{
+	width: 200px;
+	height: 200px !important;
+     margin-bottom: 10px;
+}

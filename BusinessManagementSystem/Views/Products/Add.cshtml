@@ -1,6 +1,140 @@
-﻿@{
+﻿@model List<BusinessManagementSystem.Models.Product>
+
+@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Add</h2>
+<div>
+    <form method="POST" class="form-horizontal" enctype="multipart/form-data">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Code</label>
+                    <div class="col-sm-10">
+                        <input name="Code" type="text" class="form-control" placeholder="Code">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Name</label>
+                    <div class="col-sm-10">
+                        <input name="Name" type="text" class="form-control" placeholder="Name">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Category</label>
+                    <div class="col-sm-9">
+                        <select name="CategoryId" class="form-control" id="CategoryId"></select>
+                        @*@Html.DropDownListFor(c => c.CategoryId, Model.CategoryLookUp, new {@class = "form-control"})*@
+                        @*<select name="CategoryId" class="form-control">
+                    <option>Select Option</option>
+                    <option value="1">Select 1</option>
+                    <option value="2">Select 2</option>
+                    <option value="3">Select 3</option>
+                </select>*@
+                    </div>
+                    <div class="col-sm-1 category-add-icon" style="font-size: 25px">
+                        <a href="/Categories/Add"><i class="fa fa-plus-circle" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Reorder Level</label>
+                    <div class="col-sm-10">
+                        <input name="ReorderLevel" type="number" class="form-control" placeholder="Reorder Level">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Description</label>
+                    <div class="col-sm-10">
+                        <textarea name="Discription" class="form-control"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Image</label>
+                    <div class="col-sm-10">
+                        <img src="" class="img-responsive img-thumbnail pch-img" id="cntimage">
+                        <input type="file" name="UploadFile" required="required" onchange="readURL(this);">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="form-group">
+            <div class="text-right col-sm-10">
+                <button type="submit" class="btn btn-success">Save</button>
+            </div>
+        </div>
+    </form>
+    @if (Model != null && Model.Count > 0)
+    {
+        <div>
+            @{var sl = 0;}
+            <table class="table table-bordered table-striped">
+                <thead>
+                <tr>
+                    <th>Sl</th>
+                    <th>Code</th>
+                    <th>Name</th>
+                    <th>Category</th>
+                    <th>Reorder Level</th>
+                    <th>Image</th>
+                    <th>Discription</th>
+                    <th>Action</th>
+
+                </tr>
+                </thead>
+                <tbody>
+                @foreach (var product in Model)
+                {
+                    <tr>
+                        <td>@(++sl)</td>
+                        <td>@product.Code</td>
+                        <td>@product.Name</td>
+                        <td>@product.CategoryId</td>
+                        <td>@product.ReorderLevel</td>
+                        <td>
+                            @{
+                                var file = Convert.ToBase64String(product.File);
+                                var image = string.Format("data:image/gif; base64," + file + "");
+                            }
+                            <img class="img-responsive img-thumbnail" src="@image" style="width: 100px; height: 100px;"/>
+                        </td>
+                        <td>@product.Discription</td>
+
+                        <td>
+                            @Html.ActionLink("Edit", "Update", "Products", new {id = product.Id}, new {@target = "_self"})
+                            @Html.ActionLink("Delete", "Delete", "Products", new {id = product.Id}, new {@target = "_self"})
+                        </td>
+                    </tr>
+                }
+
+                </tbody>
+            </table>
+        </div>
+    }
+
+</div>
+<script type="text/javascript">
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#cntimage')
+                    .attr('src', e.target.result)
+            };
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+</script>
+
+
+
+
+
+
+
 
