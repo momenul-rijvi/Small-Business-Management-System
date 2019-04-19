@@ -13,7 +13,7 @@ namespace BusinessManagementSystem.Models
         public string Code { get; set; }
         public string Name { get; set; }
         public int CategoryId { get; set; }
- /*       public virtual Category Category { get; set; }*/
+        public virtual Category Category { get; set; }
         public int ReorderLevel { get; set; }
         public string Discription { get; set; }
         public byte[] File { get; set; }

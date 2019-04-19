@@ -42,3 +42,69 @@ G:\Business Management System\BusinessManagementSystem\BusinessManagementSystem\
 G:\Business Management System\BusinessManagementSystem\BusinessManagementSystem\obj\Debug\BusinessManagementSystem.csprojResolveAssemblyReference.cache
 G:\Business Management System\BusinessManagementSystem\BusinessManagementSystem\obj\Debug\BusinessManagementSystem.dll
 G:\Business Management System\BusinessManagementSystem\BusinessManagementSystem\obj\Debug\BusinessManagementSystem.pdb
+H:\Business Management System\BusinessManagementSystem\BusinessManagementSystem\bin\BusinessManagementSystem.dll.config
+H:\Business Management System\BusinessManagementSystem\BusinessManagementSystem\bin\BusinessManagementSystem.dll
+H:\Business Management System\BusinessManagementSystem\BusinessManagementSystem\bin\BusinessManagementSystem.pdb
+H:\Business Management System\BusinessManagementSystem\BusinessManagementSystem\bin\EntityFramework.dll
+H:\Business Management System\BusinessManagementSystem\BusinessManagementSystem\bin\EntityFramework.SqlServer.dll
+H:\Business Management System\BusinessManagementSystem\BusinessManagementSystem\bin\System.Web.Helpers.dll
+H:\Business Management System\BusinessManagementSystem\BusinessManagementSystem\bin\System.Web.Mvc.dll
+H:\Business Management System\BusinessManagementSystem\BusinessManagementSystem\bin\System.Web.Razor.dll
+H:\Business Management System\BusinessManagementSystem\BusinessManagementSystem\bin\System.Web.Webpages.Deployment.dll
+H:\Business Management System\BusinessManagementSystem\BusinessManagementSystem\bin\System.Web.Webpages.dll
+H:\Business Management System\BusinessManagementSystem\BusinessManagementSystem\bin\System.Web.Webpages.Razor.dll
+H:\Business Management System\BusinessManagementSystem\BusinessManagementSystem\bin\EntityFramework.xml
+H:\Business Management System\BusinessManagementSystem\BusinessManagementSystem\bin\EntityFramework.SqlServer.xml
+H:\Business Management System\BusinessManagementSystem\BusinessManagementSystem\bin\System.Web.Razor.xml
+H:\Business Management System\BusinessManagementSystem\BusinessManagementSystem\bin\System.Web.Webpages.xml
+H:\Business Management System\BusinessManagementSystem\BusinessManagementSystem\bin\System.Web.Webpages.Deployment.xml
+H:\Business Management System\BusinessManagementSystem\BusinessManagementSystem\bin\System.Web.Webpages.Razor.xml
+H:\Business Management System\BusinessManagementSystem\BusinessManagementSystem\bin\System.Web.Helpers.xml
+H:\Business Management System\BusinessManagementSystem\BusinessManagementSystem\bin\System.Web.Mvc.xml
+H:\Business Management System\BusinessManagementSystem\BusinessManagementSystem\obj\Debug\BusinessManagementSystem.csprojResolveAssemblyReference.cache
+H:\Business Management System\BusinessManagementSystem\BusinessManagementSystem\obj\Debug\BusinessManagementSystem.dll
+H:\Business Management System\BusinessManagementSystem\BusinessManagementSystem\obj\Debug\BusinessManagementSystem.pdb
+H:\git test\Small-Business-Management-System\BusinessManagementSystem\bin\BusinessManagementSystem.dll.config
+H:\git test\Small-Business-Management-System\BusinessManagementSystem\bin\BusinessManagementSystem.dll
+H:\git test\Small-Business-Management-System\BusinessManagementSystem\bin\BusinessManagementSystem.pdb
+H:\git test\Small-Business-Management-System\BusinessManagementSystem\bin\EntityFramework.dll
+H:\git test\Small-Business-Management-System\BusinessManagementSystem\bin\EntityFramework.SqlServer.dll
+H:\git test\Small-Business-Management-System\BusinessManagementSystem\bin\System.Web.Helpers.dll
+H:\git test\Small-Business-Management-System\BusinessManagementSystem\bin\System.Web.Mvc.dll
+H:\git test\Small-Business-Management-System\BusinessManagementSystem\bin\System.Web.Razor.dll
+H:\git test\Small-Business-Management-System\BusinessManagementSystem\bin\System.Web.Webpages.Deployment.dll
+H:\git test\Small-Business-Management-System\BusinessManagementSystem\bin\System.Web.Webpages.dll
+H:\git test\Small-Business-Management-System\BusinessManagementSystem\bin\System.Web.Webpages.Razor.dll
+H:\git test\Small-Business-Management-System\BusinessManagementSystem\bin\EntityFramework.xml
+H:\git test\Small-Business-Management-System\BusinessManagementSystem\bin\EntityFramework.SqlServer.xml
+H:\git test\Small-Business-Management-System\BusinessManagementSystem\bin\System.Web.Razor.xml
+H:\git test\Small-Business-Management-System\BusinessManagementSystem\bin\System.Web.Webpages.xml
+H:\git test\Small-Business-Management-System\BusinessManagementSystem\bin\System.Web.Webpages.Deployment.xml
+H:\git test\Small-Business-Management-System\BusinessManagementSystem\bin\System.Web.Webpages.Razor.xml
+H:\git test\Small-Business-Management-System\BusinessManagementSystem\bin\System.Web.Helpers.xml
+H:\git test\Small-Business-Management-System\BusinessManagementSystem\bin\System.Web.Mvc.xml
+H:\git test\Small-Business-Management-System\BusinessManagementSystem\obj\Debug\BusinessManagementSystem.csprojResolveAssemblyReference.cache
+H:\git test\Small-Business-Management-System\BusinessManagementSystem\obj\Debug\BusinessManagementSystem.dll
+H:\git test\Small-Business-Management-System\BusinessManagementSystem\obj\Debug\BusinessManagementSystem.pdb
+G:\git test\Small-Business-Management-System\BusinessManagementSystem\bin\BusinessManagementSystem.dll.config
+G:\git test\Small-Business-Management-System\BusinessManagementSystem\bin\BusinessManagementSystem.dll
+G:\git test\Small-Business-Management-System\BusinessManagementSystem\bin\BusinessManagementSystem.pdb
+G:\git test\Small-Business-Management-System\BusinessManagementSystem\bin\EntityFramework.dll
+G:\git test\Small-Business-Management-System\BusinessManagementSystem\bin\EntityFramework.SqlServer.dll
+G:\git test\Small-Business-Management-System\BusinessManagementSystem\bin\System.Web.Helpers.dll
+G:\git test\Small-Business-Management-System\BusinessManagementSystem\bin\System.Web.Mvc.dll
+G:\git test\Small-Business-Management-System\BusinessManagementSystem\bin\System.Web.Razor.dll
+G:\git test\Small-Business-Management-System\BusinessManagementSystem\bin\System.Web.Webpages.Deployment.dll
+G:\git test\Small-Business-Management-System\BusinessManagementSystem\bin\System.Web.Webpages.dll
+G:\git test\Small-Business-Management-System\BusinessManagementSystem\bin\System.Web.Webpages.Razor.dll
+G:\git test\Small-Business-Management-System\BusinessManagementSystem\bin\EntityFramework.xml
+G:\git test\Small-Business-Management-System\BusinessManagementSystem\bin\EntityFramework.SqlServer.xml
+G:\git test\Small-Business-Management-System\BusinessManagementSystem\bin\System.Web.Razor.xml
+G:\git test\Small-Business-Management-System\BusinessManagementSystem\bin\System.Web.Webpages.xml
+G:\git test\Small-Business-Management-System\BusinessManagementSystem\bin\System.Web.Webpages.Deployment.xml
+G:\git test\Small-Business-Management-System\BusinessManagementSystem\bin\System.Web.Webpages.Razor.xml
+G:\git test\Small-Business-Management-System\BusinessManagementSystem\bin\System.Web.Helpers.xml
+G:\git test\Small-Business-Management-System\BusinessManagementSystem\bin\System.Web.Mvc.xml
+G:\git test\Small-Business-Management-System\BusinessManagementSystem\obj\Debug\BusinessManagementSystem.csprojResolveAssemblyReference.cache
+G:\git test\Small-Business-Management-System\BusinessManagementSystem\obj\Debug\BusinessManagementSystem.dll
+G:\git test\Small-Business-Management-System\BusinessManagementSystem\obj\Debug\BusinessManagementSystem.pdb

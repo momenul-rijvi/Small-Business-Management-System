@@ -1,0 +1,286 @@
+﻿@model BusinessManagementSystem.Models.Purchase
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Purchase</h2>
+<div>
+    <form method="POST" class="form-horizontal" enctype="multipart/form-data">
+        <p>Suppliers:</p>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">Date</label>
+            <div class="col-sm-10">
+                <input name="Date" type="text" class="form-control" placeholder="yyyy/mm/dd">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">Bill No</label>
+            <div class="col-sm-10">
+                <input name="BillNo" type="text" class="form-control" placeholder="Bill No">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">Supplier</label>
+            <div class="col-sm-10">
+                @Html.DropDownListFor(c => c.SupplierId, Model.SupplierLookUp, new { @class = "form-control" })
+            </div>
+        </div>
+        <br/>
+
+        <p>Products:</p>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">Product</label>
+            <div class="col-sm-10">
+                @Html.DropDownListFor(c => c.ProductId, Model.ProductLookUp, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">Code</label>
+            <div class="col-sm-10" id="code">
+                <input type="text" class="form-control">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">Manufacture Date</label>
+            <div class="col-sm-10">
+                <input name="ManufactureDate" id="manufactureDate" type="text" class="form-control" placeholder="yyyy/mm/dd">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">Expire Date</label>
+            <div class="col-sm-10">
+                <input name="ExpireDate" id="expireDate" type="text" class="form-control" placeholder="yyyy/mm/dd">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">Purchased Quantity</label>
+            <div class="col-sm-10">
+                <input name="Quantity" type="text" class="form-control" id="quantity">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">Unit Price</label>
+            <div class="col-sm-10">
+                <input name="UnitPrice" type="text" class="form-control" id="unitPrice">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">Total Price</label>
+            <div class="col-sm-10" id="total">
+                <input type="text" class="form-control">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">Previous Cost Price</label>
+            <div class="col-sm-10">
+                <input  type="text" class="form-control">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">Previous MRP</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">New Cost Price</label>
+            <div class="col-sm-10" id="newCostPrice">
+                <input type="text" class="form-control">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">New MRP</label>
+            <div class="col-sm-10" id="mrp">
+                <input name="MRP" type="text" class="form-control">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                @*<button type="submit" class="btn btn-success">Save</button>*@
+                <input type="button" class="btn btn-info" id="AddButton" value="Add"/>
+            </div>
+        </div>
+
+
+
+        <div class="panel-group">
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    <div class="panel-title">Added Purchase Details Items</div>
+                </div>
+                <div class="panel-body">
+                    <table class="table table-bordered table-hover table-striped table-responsive">
+
+                        <thead>
+                        <tr style="background-color: goldenrod; color: white; font-weight: bold">
+                            <td>Sl</td>
+                            <td>Products(Code)</td>
+                            <td>Manufactured Date</td>
+                            <td>Expire Date</td>
+                            <td>Purchased Quantity</td>
+                            <td>Unit Price</td>
+                            <td>Total Price</td>
+                            @*<td>Previous CP</td>
+                                <td>Previous MRP</td>*@
+                            <td>New MRP</td>
+                            <td>Action</td>
+                        </tr>
+                        </thead>
+                        <tbody id="PurchaseDetailsTable">
+
+                        @*@if (Model != null && Model.PurchaseDetailses != null && Model.PurchaseDetailses.Count > 0)
+                            {
+                                var sl = 0;
+                                foreach (var item in Model.PurchaseDetailses)
+                                {
+                                    <tr>
+                                        <td>@(++sl)</td>
+                                        <td>@item.Name</td>
+                                        <td>@item.Qty</td>
+                                    </tr>
+                                }
+                            }*@
+                        </tbody>
+
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-10">
+                <button type="submit" class="btn btn-success">Save</button>
+            </div>
+        </div>
+    </form>
+</div>
+<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+
+<script>
+    var subdirectory = "../../";
+
+    $(document.body).on("change", "#ProductId", function () {
+        var ProductId = $(this).val();
+        if (ProductId > 0) {
+
+            var url = subdirectory + "Purchases/GetByProductId";
+            var params = { ProductId: ProductId };
+            $.post(url, params, function (rData) {
+                if (rData != undefined) {
+                    $("#code").empty();
+                    
+                    $.each(rData, function (k, v) {
+                        var code = "<input id=productCode class=form-control value='" + v.Code + "' readonly>";
+                        $("#code").append(code);                     
+                    });
+                }else {
+                    $("#code").empty();
+                }
+            });
+        }
+    });
+    
+
+    $(document.body).on("change", "#unitPrice", function () {
+        $("#total").empty();
+        var total = ($("#quantity").val()) * ($("#unitPrice").val());
+        var t = "<input id=totalPrice class=form-control value='" + total + "' readonly>";
+        $("#total").append(t);
+
+        $("#newCostPrice").empty();
+        var newCostPrice = ($("#unitPrice").val());
+        var n = "<input id=newCostPriceText class=form-control value='" + newCostPrice + "'>";
+        $("#newCostPrice").append(n);
+
+        $("#mrp").empty();
+        var unitP = parseFloat($("#unitPrice").val())
+        var mrp = unitP + ((unitP * 25) / 100);
+        var m = "<input id=mRP class=form-control value='" + mrp + "'>";
+        $("#mrp").append(m);
+    });
+
+    $(document.body).on("change", "#quantity", function () {
+        $("#total").empty();
+        var total = ($("#quantity").val()) * ($("#unitPrice").val());
+        var t = "<input class=form-control value='" + total + "' readonly>";
+        $("#total").append(t);
+    });
+
+    /*table data show*/
+    $("#AddButton").click(function () {
+        createRowForPurchase();
+
+    });
+
+
+    var index = 0;
+    function createRowForPurchase() {
+
+        //Get Selected Item from UI
+        var selectedItem = getSelectedItem();
+
+        //Check Last Row Index
+        var index = $("#PurchaseDetailsTable").children("tr").length;
+        var sl = index;
+
+        //For Model List<Property> Binding For MVC
+        var indexTd = "<td style='display:none'><input type='hidden' id='Index" + index + "' name='PurchaseDetailses.Index' value='" + index + "' /> </td>";
+
+        //For Serial No For UI
+        var slTd = "<td id='Sl" + index + "'> " + (++sl) + " </td>";
+
+        var productId = "<td> <input type='hidden' id='productId" + index + "'  name='PurchaseDetailses[" + index + "].ProductId' value='" + selectedItem.ProductId + "' /> " + selectedItem.Code + " </td>";
+        var manufactureDate = "<td> <input type='hidden' id='manufactureDate" + index + "'  name='PurchaseDetailses[" + index + "].ManufactureDate' value='" + selectedItem.ManufactureDate + "' /> " + selectedItem.ManufactureDate + " </td>";
+        var expireDate = "<td> <input type='hidden' id='expireDate" + index + "'  name='PurchaseDetailses[" + index + "].ExpireDate' value='" + selectedItem.ExpireDate + "' /> " + selectedItem.ExpireDate + " </td>";
+        var quantity = "<td> <input type='hidden' id='quantity" + index + "'  name='PurchaseDetailses[" + index + "].Quantity' value='" + selectedItem.Quantity + "' /> " + selectedItem.Quantity + " </td>";
+        var unitPrice = "<td> <input type='hidden' id='unitPrice" + index + "'  name='PurchaseDetailses[" + index + "].UnitPrice' value='" + selectedItem.UnitPrice + "' /> " + selectedItem.UnitPrice + " </td>";
+        var totalPrice = "<td> " + selectedItem.TotalPrice + " </td>";
+        var mrp = "<td> <input type='hidden' id='mrp" + index + "'  name='PurchaseDetailses[" + index + "].MRP' value='" + selectedItem.MRP + "' /> " + selectedItem.MRP + " </td>";
+
+        var actionTd = "<td> <input type='button' class='editButton' data-index='" + index + "' value='Edit'/> <input type='button' class='deleteButton' data-index='" + index + "' value='Delete'/> </td>";
+
+        var newRow = "<tr>" + indexTd + slTd + productId + manufactureDate + expireDate + quantity + unitPrice + totalPrice + mrp + actionTd + " </tr>";
+
+        $("#PurchaseDetailsTable").append(newRow);
+        $("#ProductId").val("");
+        $("#productCode").val("");
+        $("#manufactureDate").val("");
+        $("#expireDate").val("");
+        $("#quantity").val("");
+        $("#unitPrice").val("");
+        $("#mRP").val("");
+        $("#totalPrice").val("");
+        $("#newCostPriceText").val("");
+        
+    }
+    function getSelectedItem() {
+        var code = $("#productCode").val();
+        var productId = $("#ProductId option:selected").val();
+        var manufactureDate = $("#manufactureDate").val();
+        var expireDate = $("#expireDate").val();
+        var quantity = $("#quantity").val();
+        var unitPrice = $("#unitPrice").val();
+        var totalPrice = $("#totalPrice").val();
+        var mrp = $("#mRP").val();
+
+        var item = {
+            "Code": code,
+            "ProductId": productId,
+            "ManufactureDate": manufactureDate,
+            "ExpireDate": expireDate,
+            "Quantity": quantity,
+            "UnitPrice": unitPrice,
+            "TotalPrice" : totalPrice,
+            "MRP": mrp
+        };
+        return item;
+    }
+
+    $(document.body).on("click", ".editButton", function () {
+        var index = $(this).attr("data-index");
+        var itemName = $("#productId" + index).val();
+        alert(itemName);
+
+
+    });
+
+</script>
