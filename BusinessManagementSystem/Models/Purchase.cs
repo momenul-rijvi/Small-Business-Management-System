@@ -28,5 +28,10 @@ namespace BusinessManagementSystem.Models
         [NotMapped]
         public virtual Product Product { get; set; }
 
+        [NotMapped]
+        public DateTime StarDate { get; set; }
+        [NotMapped]
+        public DateTime EndDate { get; set; }
+
     }
 }

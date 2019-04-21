@@ -108,3 +108,25 @@ G:\git test\Small-Business-Management-System\BusinessManagementSystem\bin\System
 G:\git test\Small-Business-Management-System\BusinessManagementSystem\obj\Debug\BusinessManagementSystem.csprojResolveAssemblyReference.cache
 G:\git test\Small-Business-Management-System\BusinessManagementSystem\obj\Debug\BusinessManagementSystem.dll
 G:\git test\Small-Business-Management-System\BusinessManagementSystem\obj\Debug\BusinessManagementSystem.pdb
+C:\Users\Shimu\Desktop\DotNetSecandProjectGit\Small-Business-Management-System\BusinessManagementSystem\obj\Debug\BusinessManagementSystem.csprojResolveAssemblyReference.cache
+C:\Users\Shimu\Desktop\DotNetSecandProjectGit\Small-Business-Management-System\BusinessManagementSystem\obj\Debug\BusinessManagementSystem.dll
+C:\Users\Shimu\Desktop\DotNetSecandProjectGit\Small-Business-Management-System\BusinessManagementSystem\obj\Debug\BusinessManagementSystem.pdb
+C:\Users\Shimu\Desktop\DotNetSecandProjectGit\Small-Business-Management-System\BusinessManagementSystem\bin\BusinessManagementSystem.dll.config
+C:\Users\Shimu\Desktop\DotNetSecandProjectGit\Small-Business-Management-System\BusinessManagementSystem\bin\BusinessManagementSystem.dll
+C:\Users\Shimu\Desktop\DotNetSecandProjectGit\Small-Business-Management-System\BusinessManagementSystem\bin\BusinessManagementSystem.pdb
+C:\Users\Shimu\Desktop\DotNetSecandProjectGit\Small-Business-Management-System\BusinessManagementSystem\bin\EntityFramework.dll
+C:\Users\Shimu\Desktop\DotNetSecandProjectGit\Small-Business-Management-System\BusinessManagementSystem\bin\EntityFramework.SqlServer.dll
+C:\Users\Shimu\Desktop\DotNetSecandProjectGit\Small-Business-Management-System\BusinessManagementSystem\bin\System.Web.Helpers.dll
+C:\Users\Shimu\Desktop\DotNetSecandProjectGit\Small-Business-Management-System\BusinessManagementSystem\bin\System.Web.Mvc.dll
+C:\Users\Shimu\Desktop\DotNetSecandProjectGit\Small-Business-Management-System\BusinessManagementSystem\bin\System.Web.Razor.dll
+C:\Users\Shimu\Desktop\DotNetSecandProjectGit\Small-Business-Management-System\BusinessManagementSystem\bin\System.Web.Webpages.Deployment.dll
+C:\Users\Shimu\Desktop\DotNetSecandProjectGit\Small-Business-Management-System\BusinessManagementSystem\bin\System.Web.Webpages.dll
+C:\Users\Shimu\Desktop\DotNetSecandProjectGit\Small-Business-Management-System\BusinessManagementSystem\bin\System.Web.Webpages.Razor.dll
+C:\Users\Shimu\Desktop\DotNetSecandProjectGit\Small-Business-Management-System\BusinessManagementSystem\bin\EntityFramework.xml
+C:\Users\Shimu\Desktop\DotNetSecandProjectGit\Small-Business-Management-System\BusinessManagementSystem\bin\EntityFramework.SqlServer.xml
+C:\Users\Shimu\Desktop\DotNetSecandProjectGit\Small-Business-Management-System\BusinessManagementSystem\bin\System.Web.Razor.xml
+C:\Users\Shimu\Desktop\DotNetSecandProjectGit\Small-Business-Management-System\BusinessManagementSystem\bin\System.Web.Webpages.xml
+C:\Users\Shimu\Desktop\DotNetSecandProjectGit\Small-Business-Management-System\BusinessManagementSystem\bin\System.Web.Webpages.Deployment.xml
+C:\Users\Shimu\Desktop\DotNetSecandProjectGit\Small-Business-Management-System\BusinessManagementSystem\bin\System.Web.Webpages.Razor.xml
+C:\Users\Shimu\Desktop\DotNetSecandProjectGit\Small-Business-Management-System\BusinessManagementSystem\bin\System.Web.Helpers.xml
+C:\Users\Shimu\Desktop\DotNetSecandProjectGit\Small-Business-Management-System\BusinessManagementSystem\bin\System.Web.Mvc.xml
