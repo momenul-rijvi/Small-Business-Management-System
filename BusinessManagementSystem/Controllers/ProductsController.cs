@@ -107,5 +107,22 @@ namespace BusinessManagementSystem.Controllers
             var jsonData = dataList.Select(c => new { c.Id, c.Name });
             return Json(jsonData, JsonRequestBehavior.AllowGet);
         }
+        public JsonResult GetAllProduct()
+        {
+            var dataList = _productManager.GetAll();
+            var jsonData = dataList.Select(c => new { c.Id, c.Name });
+            return Json(jsonData, JsonRequestBehavior.AllowGet);
+        }
+
+        public JsonResult IsCodeNoExist(string code)
+        {
+            var data = _productManager.IsCodeExist(code);
+
+            if (data != null)
+            {
+                return Json("Sorry! This Code Is Alrady Exist !", JsonRequestBehavior.AllowGet);
+            }
+            return Json(false);
+        }
 	}
 }

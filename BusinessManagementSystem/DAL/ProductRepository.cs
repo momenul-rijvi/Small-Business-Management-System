@@ -28,7 +28,12 @@ namespace BusinessManagementSystem.DAL
 
         public List<Product> GetAll()
         {
-            return db.Products.ToList();
+            var products= db.Products.ToList();
+            foreach (var product in products)
+            {
+                db.Entry(product).Reference(c=>c.Category).Load();
+            }
+            return products;
         }
 
         public Product GetProductById(int id)
@@ -65,6 +70,11 @@ namespace BusinessManagementSystem.DAL
         public List<Category> GetAllCategory()
         {
             return db.Categories.ToList();
+        }
+
+        public Product IsCodeExist(string code)
+        {
+            return db.Products.Where(c => c.Code == code).FirstOrDefault();
         }
     }
 }

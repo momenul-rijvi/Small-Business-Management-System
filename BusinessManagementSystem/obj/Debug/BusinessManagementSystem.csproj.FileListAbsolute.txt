@@ -108,3 +108,25 @@ G:\git test\Small-Business-Management-System\BusinessManagementSystem\bin\System
 G:\git test\Small-Business-Management-System\BusinessManagementSystem\obj\Debug\BusinessManagementSystem.csprojResolveAssemblyReference.cache
 G:\git test\Small-Business-Management-System\BusinessManagementSystem\obj\Debug\BusinessManagementSystem.dll
 G:\git test\Small-Business-Management-System\BusinessManagementSystem\obj\Debug\BusinessManagementSystem.pdb
+G:\BusinessManagementSystem\BusinessManagementSystem\bin\BusinessManagementSystem.dll.config
+G:\BusinessManagementSystem\BusinessManagementSystem\bin\BusinessManagementSystem.dll
+G:\BusinessManagementSystem\BusinessManagementSystem\bin\BusinessManagementSystem.pdb
+G:\BusinessManagementSystem\BusinessManagementSystem\bin\EntityFramework.dll
+G:\BusinessManagementSystem\BusinessManagementSystem\bin\EntityFramework.SqlServer.dll
+G:\BusinessManagementSystem\BusinessManagementSystem\bin\System.Web.Helpers.dll
+G:\BusinessManagementSystem\BusinessManagementSystem\bin\System.Web.Mvc.dll
+G:\BusinessManagementSystem\BusinessManagementSystem\bin\System.Web.Razor.dll
+G:\BusinessManagementSystem\BusinessManagementSystem\bin\System.Web.Webpages.Deployment.dll
+G:\BusinessManagementSystem\BusinessManagementSystem\bin\System.Web.Webpages.dll
+G:\BusinessManagementSystem\BusinessManagementSystem\bin\System.Web.Webpages.Razor.dll
+G:\BusinessManagementSystem\BusinessManagementSystem\bin\EntityFramework.xml
+G:\BusinessManagementSystem\BusinessManagementSystem\bin\EntityFramework.SqlServer.xml
+G:\BusinessManagementSystem\BusinessManagementSystem\bin\System.Web.Razor.xml
+G:\BusinessManagementSystem\BusinessManagementSystem\bin\System.Web.Webpages.xml
+G:\BusinessManagementSystem\BusinessManagementSystem\bin\System.Web.Webpages.Deployment.xml
+G:\BusinessManagementSystem\BusinessManagementSystem\bin\System.Web.Webpages.Razor.xml
+G:\BusinessManagementSystem\BusinessManagementSystem\bin\System.Web.Helpers.xml
+G:\BusinessManagementSystem\BusinessManagementSystem\bin\System.Web.Mvc.xml
+G:\BusinessManagementSystem\BusinessManagementSystem\obj\Debug\BusinessManagementSystem.csprojResolveAssemblyReference.cache
+G:\BusinessManagementSystem\BusinessManagementSystem\obj\Debug\BusinessManagementSystem.dll
+G:\BusinessManagementSystem\BusinessManagementSystem\obj\Debug\BusinessManagementSystem.pdb

@@ -1,0 +1,131 @@
+﻿@model List<BusinessManagementSystem.Models.PurchaseDetails>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .left-container, .right-container {
+        /*border: 5px solid #C71585;*/
+        float: left;
+        width: 46.65%;
+        height: 220px;
+        margin: 10px 5px;
+    }
+</style>
+<div class="container-box">
+    <div class="container-body">
+        <form method="POST" class="form-horizontal" enctype="multipart/form-data">
+
+            <div class="left-container">
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Product</label>
+                    @* @Html.LabelFor(c => c, "Customer Name *", new { @class = "control-label col-md-4" })*@
+                    <div class="col-sm-10">
+                        <select name="ProductId" class="form-control" id="ProductId"></select>
+                        @*@Html.DropDownListFor(c => c.ProductId, Model.ProductLookUp, new {@class = "form-control"})*@
+                        @* @Html.TextBoxFor(z => z.Name, null, new { @class = "form-control" })*@
+                        @*@Html.TextBox("PurchaseDetails.Product.Name", null, new { @class = "form-control" })*@
+                        @*<input name="productName" type="text" class="form-control" placeholder="Pruduct">*@
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Catagory</label>
+                    <div class="col-sm-10">
+                        <input name="Category" type="text" class="form-control" placeholder="Category">
+                    </div>
+                </div>
+
+            </div>
+            <div class="right-container">
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Start Date</label>
+                    <div class="col-sm-10">
+                        <input name="StarDate" type="date" class="form-control" placeholder="Start Date">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">End Date</label>
+                    <div class="col-sm-10">
+                        <input name="EndDate" type="date" class="form-control" placeholder="End Date">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button type="submit" class="btn btn-success">Search</button>
+                    </div>
+                </div>
+                @*<br />
+                    <div style="font-weight: bold;font-size: 25px;">Stock In Report</div>
+
+                    <br />*@
+            </div>
+        </form>
+        <br>
+        <div style="font-weight: bold; font-size: 25px; text-align: center;">Stock In Report</div>
+        <br>
+    </div>
+    @if (Model != null && Model.Count > 0)
+    {
+        <div>
+            @{ var sl = 0; }
+            <table class="table table-bordered table-striped">
+                <thead>
+                <tr style="background-color: goldenrod; color: white; font-weight: bold">
+                    <th>Sl</th>
+                    <th>Code</th>
+                    <th>Name</th>
+                    <th>category</th>
+                    <th>Reorder Lavel</th>
+                    <th>Resent Expeird Date</th>
+                    <th>Opening Balance</th>
+                    <th>In</th>
+                    <th>Out</th>
+                    <th>Closing Balance</th>
+                </tr>
+                </thead>
+                <tbody>
+                @foreach (var product in Model)
+                {
+                    <tr>
+                        <td>@(++sl)</td>
+                        <td>@product.Product.Code</td>
+                        <td>@product.Product.Name</td>
+                        <td>@product.Product.Category.Name</td>
+                        <td>@product.Product.ReorderLevel</td>
+                        <td>@product.ExpireDate</td>
+                        <td>@product.UnitPrice</td>
+                        <td>@product.UnitPrice</td>
+                        <td>@(product.MRP-product.UnitPrice)</td>
+                        <td>@product.MRP</td>
+                    </tr>
+                }
+                </tbody>
+            </table>
+        </div>
+    }
+</div>
+    
+<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+
+    var subdirectory = "../../";
+
+    $(document).ready(function () {
+        var url = subdirectory + "Products/GetAllProduct";
+
+        $.post(url, function (rData) {
+            if (rData != undefined) {
+                $("#ProductId").empty();
+                $("#ProductId").append("<option value=''>---Select---</option>");
+                $.each(rData, function (k, v) {
+                    var option = "<option value=" + v.Id + ">" + v.Name + "</option>";
+                    $("#ProductId").append(option);
+
+                });
+            }
+        });
+
+
+    });
+</script>
+

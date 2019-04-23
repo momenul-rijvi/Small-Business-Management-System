@@ -15,5 +15,7 @@ namespace BusinessManagementSystem.DatabaseContext
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Purchase> Purchases { get; set; }
         public DbSet<PurchaseDetails> PurchaseDetailses { get; set; }
+        public DbSet<Sale> Sales { get; set; }
+        public DbSet<SaleDetails> SaleDetailses { get; set; }
     }
 }

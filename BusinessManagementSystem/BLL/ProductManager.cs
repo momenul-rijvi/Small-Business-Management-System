@@ -40,5 +40,10 @@ namespace BusinessManagementSystem.BLL
         {
             return _productRepository.GetAllCategory();
         }
+
+        public Product IsCodeExist(string code)
+        {
+            return _productRepository.IsCodeExist(code);
+        }
     }
 }

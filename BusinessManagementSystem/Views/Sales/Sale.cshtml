@@ -1,0 +1,297 @@
+﻿@model BusinessManagementSystem.Models.Sale
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Sale</h2>
+<div>
+    <form method="POST" class="form-horizontal" enctype="multipart/form-data">
+
+        <div class="panel-group">
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    <div class="panel-title">Customer</div>
+                </div>
+                <div class="panel-body">
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Customer</label>
+                        <div class="col-sm-9">
+                            @Html.DropDownListFor(c => c.CustomerId, Model.CustomerLookUp, new {@class = "form-control"})
+                        </div>
+                        <div class="col-sm-1 category-add-icon" style="font-size: 25px">
+                            <a href="/Customers/Save"><i class="fa fa-plus-circle" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Date</label>
+                        <div class="col-sm-10">
+                            <input name="Date" type="date" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Loyality Point</label>
+                        <div class="col-sm-10" id="loyalityPoint">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <br />
+        <div class="panel-group">
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    <div class="panel-title">Products</div>
+                </div>
+                <div class="panel-body">
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Product</label>
+                        <div class="col-sm-10">
+                            @Html.DropDownListFor(c => c.ProductId, Model.ProductLookUp, new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Available Quantity</label>
+                        <div class="col-sm-10" id="avQuantity">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Unit Price</label>
+                        <div class="col-sm-10" id="unitPrice">
+                            <input name="UnitPrice" type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Quantity</label>
+                        <div class="col-sm-10">
+                            <input name="Quantity" type="number" class="form-control" id="quantityEnty">
+                            <span id="qntyError" style="color: red"></span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                @*<button type="submit" class="btn btn-success">Save</button>*@
+                <input type="button" class="btn btn-info" id="AddButton" value="Add" />
+            </div>
+        </div>
+
+
+
+        <div class="panel-group">
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    <div class="panel-title">Added Sale Details Items</div>
+                </div>
+                <div class="panel-body">
+                    <table class="table table-bordered table-hover table-striped table-responsive">
+
+                        <thead>
+                            <tr style="background-color: goldenrod; color: white; font-weight: bold">
+                                <td>Sl</td>
+                                <td>Product</td>
+                                <td>Quantity</td>
+                                <td>Unit Price</td>
+                                <td>Total Price</td>
+                                <td>Action</td>
+                            </tr>
+                        </thead>
+                        <tbody id="SaleDetailsTable"></tbody>
+
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-8 control-label">Grand Total</label>
+            <div class="col-sm-4" id="grandTotal">
+                <input type="text" name="GrandTotalValue" class="form-control" id="grandTotalValue" value="0" readonly>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-10">
+                <button type="submit" class="btn btn-success">Save</button>
+            </div>
+        </div>
+    </form>
+</div>
+<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+
+<script>
+    var subdirectory = "../../";
+
+    $(document.body).on("change", "#CustomerId", function () {
+        var CustomerId = $(this).val();
+        if (CustomerId > 0) {
+
+            var url = subdirectory + "Sales/GetByCustomerId";
+            var params = { CustomerId: CustomerId };
+            $.post(url, params, function (rData) {
+                if (rData != undefined) {
+                    $("#loyalityPoint").empty();
+
+                    $.each(rData, function (k, v) {
+                        var lPoint = "<input class=form-control value='" + v.LoyaltyPoint + "' readonly>";
+                        $("#loyalityPoint").append(lPoint);
+                    });
+                } else {
+                    $("#loyalityPoint").empty();
+                }
+            });
+        }
+    });
+
+    $(document.body).on("change", "#ProductId", function () {
+        var ProductId = $(this).val();
+        if (ProductId > 0) {
+
+            var url = subdirectory + "Sales/GetProductById";
+            var params = { ProductId: ProductId };
+            $.post(url, params, function (rData) {
+                if (rData != undefined) {
+                    $("#avQuantity").empty();
+                    $("#unitPrice").empty();
+                   
+                    var q = 0;
+                    var uPrice = 0;
+                    $.each(rData, function (k, v) {                                              
+                        q = q + v.Quantity;
+                        uPrice = v.UnitPrice;                       
+                    });
+                    var avQuantity = "<input id=avQuantityValue class=form-control value='" + q + "' readonly>";
+                    $("#avQuantity").append(avQuantity);
+
+                    var unitPrice = "<input id=unitPriceValue class=form-control value='" + uPrice + "' readonly>";
+                    $("#unitPrice").append(unitPrice);
+                } else {
+                    $("#avQuantity").empty();
+                    $("#unitPrice").empty();
+                }
+
+            });
+
+            var url1 = subdirectory + "Sales/GetProductSaleById";
+            var params1 = { ProductId: ProductId };
+            $.post(url1, params1, function (rsData) {
+                if (rsData != undefined) {
+                    var purchaseQnty = $("#avQuantityValue").val();
+                    $("#avQuantity").empty();
+
+                    var q = 0;
+                    $.each(rsData, function (k, v) {
+                        q = q + v.Quantity;                       
+                    });
+                    var av = purchaseQnty - q;
+                    var avQuantity = "<input id=avQuantityValue class=form-control value='" + av + "' readonly>";
+                    $("#avQuantity").append(avQuantity);
+
+                } else {
+                    $("#avQuantity").empty();
+                }
+
+            });
+        }
+    });
+   // add table
+    $("#AddButton").click(function () {
+        var avbqnty = parseInt($("#avQuantityValue").val());
+        var uQnty = parseInt($("#quantityEnty").val());
+        $("#qntyError").text("");
+        var isSuccess = true;
+        if (avbqnty < uQnty) {
+            $("#qntyError").append("Please enter less than '" + avbqnty + "'");
+            isSuccess = false;
+        }
+        else if (uQnty < 1) {
+            $("#qntyError").append("Please enter possitive value");
+            isSuccess = false;
+
+        } else {
+            $("#qntyError").text("");
+        }
+
+        if (isSuccess) {
+            var gt = parseFloat($("#quantityEnty").val() * $("#unitPriceValue").val());
+            var currentValue = parseFloat($("#grandTotalValue").val());
+            gt = gt + currentValue;
+
+            $("#grandTotalValue").val(gt);
+
+            createRowForSale();         
+        }
+        
+
+    });
+    $(document.body).on("click", ".deleteButton", function () {
+        var index = $(this).attr("data-index");
+        var redata = $("#totalPrice" + index).text();
+
+        var currentValue = parseFloat($("#grandTotalValue").val());
+        redata = currentValue-redata;
+
+        $("#grandTotalValue").val(redata);
+
+        $("#row" + index).remove();
+        
+
+    });
+
+    var index = 0;
+    function createRowForSale() {
+
+        //Get Selected Item from UI
+        var selectedItem = getSelectedItem();
+
+        //Check Last Row Index
+        var index = $("#SaleDetailsTable").children("tr").length;
+        var sl = index;
+
+        //For Model List<Property> Binding For MVC
+        var indexTd = "<td style='display:none'><input type='hidden' id='Index" + index + "' name='SaleDetailses.Index' value='" + index + "' /> </td>";
+
+        //For Serial No For UI
+        var slTd = "<td id='Sl" + index + "'> " + (++sl) + " </td>";
+
+        var productId = "<td> <input type='hidden' id='productId" + index + "'  name='SaleDetailses[" + index + "].ProductId' value='" + selectedItem.ProductId + "' /> " + selectedItem.ProductName + " </td>";
+        var quantity = "<td> <input type='hidden' id='quantity" + index + "'  name='SaleDetailses[" + index + "].Quantity' value='" + selectedItem.Quantity + "' /> " + selectedItem.Quantity + " </td>";
+        var unitPrice = "<td> <input type='hidden' id='unitPrice" + index + "'  name='SaleDetailses[" + index + "].UnitPrice' value='" + selectedItem.UnitPrice + "' /> " + selectedItem.UnitPrice + " </td>";
+        var totalPrice = "<td id='totalPrice" + index + "'> " + selectedItem.TotalPrice + " </td>";
+
+        var actionTd = "<td> <input type='button' class='editButton' data-index='" + index + "' value='Edit'/> <input type='button' class='deleteButton' data-index='" + index + "' value='Delete'/> </td>";
+
+        var newRow = "<tr id='row" + index + "'>" + indexTd + slTd + productId + quantity + unitPrice + totalPrice + actionTd + " </tr>";
+
+        $("#SaleDetailsTable").append(newRow);
+        $("#ProductId").val("");
+        $("#quantityEnty").val("");
+        $("#unitPriceValue").val("");
+        $("#avQuantityValue").val("");
+        
+    }
+    function getSelectedItem() {
+        var productId = $("#ProductId option:selected").val();
+        var productName = $("#ProductId option:selected").text();
+        
+        var quantity = $("#quantityEnty").val();
+        var unitPrice = $("#unitPriceValue").val();
+        var totalPrice = $("#quantityEnty").val() * $("#unitPriceValue").val();
+        var item = {
+            "ProductName": productName,
+            "ProductId": productId,
+            "Quantity": quantity,
+            "UnitPrice": unitPrice,
+            "TotalPrice": totalPrice
+        };
+        return item;
+    }
+</script>
+
+

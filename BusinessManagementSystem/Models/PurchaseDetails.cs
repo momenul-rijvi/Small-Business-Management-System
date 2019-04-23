@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -18,5 +19,14 @@ namespace BusinessManagementSystem.Models
         public int Quantity { get; set; }
         public double UnitPrice { get; set; }
         public double MRP { get; set; }
+
+
+        [NotMapped]
+        public virtual List<SaleDetails> SaleDetails { get; set; }
+        [NotMapped]
+        public DateTime StarDate { get; set; }
+        [NotMapped]
+        public DateTime EndDate { get; set; }
+
     }
 }
